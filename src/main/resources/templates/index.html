@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mp3 - Cloud Website</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        nav{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        ul li a{
+            margin: 0.2rem;
+            padding: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul style="display: flex;list-style: none">
+        <li><a href="/upload">Upload music</a></li>
+        <li><a href="/auth/login">Login</a></li>
+        <li><a href="/auth/logout">Logout</a></li>
+    </ul>
+</nav>
+<br><br>
+<center>
+    <table style="width:80%;" border="1">
+        <thead>
+            <td>Music</td>
+            <td>Name</td>
+            <td>Sharer</td>
+            <td>Shared date</td>
+        </thead>
+        <tbody>
+        <tr th:each="m: ${musics}">
+            <td><audio th:src="@{${m.path}}" controls></audio></td>
+            <td th:text="${m.name}"></td>
+            <td th:text="${m.sharer}"></td>
+            <td th:text="${m.dataDate}"></td>
+        </tr>
+        </tbody>
+    </table>
+</center>
+</body>
+</html>

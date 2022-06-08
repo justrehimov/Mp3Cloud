@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload your musics</title>
+    <style>
+        nav{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        ul li a{
+            margin: 0.2rem;
+            padding: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul style="display: flex;list-style: none">
+        <li><a href="/">Musics</a></li>
+        <li><a href="/auth/logout">Logout</a></li>
+    </ul>
+</nav>
+<center>
+<form method="post" action="/upload" enctype="multipart/form-data">
+    <input type="file" name="music" multiple accept="audio/*"><br><br>
+    <input type="submit" value="Upload">
+</form>
+</center>
+</body>
+</html>
