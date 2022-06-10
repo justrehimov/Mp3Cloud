@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        a{
+            display: flex;
+            width: auto;
+            max-width: 10rem;
+            height: auto;
+            padding: 1rem;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            border: 1px solid white;
+            outline: none;
+            color: white;
+            background: #1152bf;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div>
+</div>
+<center>
+    <article>
+        <div class="cont">
+            <h3 th:text="${music.name}"></h3>
+        </div>
+        <audio class="audio" controls="controls">
+            <source type="audio/mpeg" th:src="@{${music.path}}">
+        </audio><br><br>
+        <a style="margin: auto" th:href="@{${music.path}}" th:download="${music.name}">Download</a>
+    </article>
+</center>
+<script>
+    $('audio').mediaelementplayer({
+        features: ['playpause','progress','current','tracks','fullscreen']
+    });
+</script>
+</body>
+</html>

@@ -26,9 +26,8 @@ public class MusicController {
 
     @PostMapping
     public ModelAndView music(@RequestPart("music") MultipartFile[] musics){
-        System.out.println(musics.length);
-        ModelAndView modelAndView = new ModelAndView("index");
-        musicService.upload(musics);
+        String response = musicService.upload(musics);
+        ModelAndView modelAndView = new ModelAndView(response);
         modelAndView.addObject("musics",musicRepo.findAll());
         return modelAndView;
     }

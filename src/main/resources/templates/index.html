@@ -43,15 +43,13 @@
 <center>
     <table style="width:80%;" border="1">
         <thead>
-            <td>Music</td>
-            <td>Name</td>
+            <td>Music name</td>
             <td>Sharer</td>
             <td>Shared date</td>
         </thead>
         <tbody>
         <tr th:each="m: ${musics}">
-            <td><audio th:src="@{${m.path}}" controls></audio></td>
-            <td th:text="${m.name}"></td>
+            <td><a th:href="@{/music/{id}(id=${m.id})}" th:text="${m.name}"></a></td>
             <td th:text="${m.sharer}"></td>
             <td th:text="${m.dataDate}"></td>
         </tr>

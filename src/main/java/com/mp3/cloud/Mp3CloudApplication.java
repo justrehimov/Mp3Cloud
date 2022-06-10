@@ -6,17 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Mp3CloudApplication implements CommandLineRunner{
-    @Value("${info.root-dir}")
-    private String rootPath;
+public class Mp3CloudApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(Mp3CloudApplication.class, args);
     }
-
-        @Override
-        public void run(String... args) throws Exception {
-    }
-
 }
-
